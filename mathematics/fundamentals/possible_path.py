@@ -1,15 +1,7 @@
-import sys
+import fractions
 
 def can_move(a, b, x, y):
-    if b == 0:
-        if x != a or y != b: 
-            return False
-    else:
-        if (x - a) % b != 0:
-            return False
-        if (y - a) % b != 0:
-            return False
-    return True
+    return fractions.gcd(x,y) == fractions.gcd(a,b)
 
 if __name__ == "__main__":
     n = int(input())
