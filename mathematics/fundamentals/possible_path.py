@@ -2,15 +2,13 @@ import sys
 
 def can_move(a, b, x, y):
     if b == 0:
-        if x != a: 
+        if x != a or y != b: 
             return False
-    elif (x - a) % b != 0:
-        return False
-    if a == 0:
-        if y != b: 
+    else:
+        if (x - a) % b != 0:
             return False
-    elif (y - b) % a != 0:
-        return False
+        if (y - a) % b != 0:
+            return False
     return True
 
 if __name__ == "__main__":
