@@ -1,4 +1,5 @@
 import sys
+import itertools
 
 def counter(n, nums):
     counts = dict()
@@ -9,5 +10,5 @@ def counter(n, nums):
     return counts
 
 if __name__ == "__main__":
-    t = int(input())
-    print(" ".join(str(v) for k, v in counter(n, [int(x) for x in input().split()]).items()))
+    n = int(input())
+    print(" ".join(itertools.chain.from_iterable([str(k)]*v for k, v in counter(n, [int(x) for x in input().split()]).items())))
